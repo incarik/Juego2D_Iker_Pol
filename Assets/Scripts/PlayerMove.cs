@@ -16,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     public Animator anim;
     AudioSource source;
     public AudioClip jumpSound;
+    public AudioClip deathSound;
+    public AudioClip shootSound;
 
     public Transform bulletSpawn;
 
@@ -87,6 +89,7 @@ public class PlayerMove : MonoBehaviour
         
     }
 
+    
     void Shoot()
     {
         if(!canShoot)
@@ -104,6 +107,8 @@ public class PlayerMove : MonoBehaviour
             Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
 
             canShoot = false;
+
+            source.PlayOneShot(shootSound);
         }
     }
 

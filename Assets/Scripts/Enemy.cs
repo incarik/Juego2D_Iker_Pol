@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 3 || collision.gameObject.tag == "Goombas")
+        if (collision.gameObject.layer == 3 || collision.gameObject.tag == "Slime")
         {
             if (enemyDirection == 1)
             {
